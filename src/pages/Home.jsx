@@ -7,9 +7,9 @@ import heroImg from '../assets/images/hero-img.png'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import Services from '../sevices/Services'
-import ProductsList from '../UI/ProductsList'
+import ProductsList from '../components/UI/ProductsList'
 import counterImg from '../assets/images/counter-timer-img.png'
-import Clock from '../UI/Clock'
+import Clock from '../components/UI/Clock'
 const Home = () => {
     const [trendingProducts, setTrendingProducts] = useState([]);
     const [bestSalesProducts, setBestSalesProducts] = useState([]);

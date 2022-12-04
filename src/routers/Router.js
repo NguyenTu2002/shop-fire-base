@@ -4,9 +4,9 @@ import Home from '../pages/Home'
 import Shop from '../pages/Shop'
 import Signin from '../pages/Signin'
 import Signup from '../pages/Signup'
-import ProductDetail from '../pages/ProductDetail'
 import Cart from '../pages/Cart'
 import Checkout from '../pages/Checkout'
+import ProductDetail from '../pages/ProductDetail'
 const Router = () => {
   return (
     <Routes>
@@ -15,7 +15,7 @@ const Router = () => {
         <Route path='cart' element={<Cart />} />
         <Route path='signin' element={<Signin />} />
         <Route path='signup' element={<Signup />} />
-        <Route path='shop/id' element={<ProductDetail />} />
+        <Route path='shop/:id' element={<ProductDetail />} />
         <Route path='shop' element={<Shop />} />
         <Route path='chechout' element={<Checkout />} />
     </Routes>
