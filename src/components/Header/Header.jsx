@@ -5,6 +5,7 @@ import logo from '../../assets/images/eco-logo.png'
 import userIcon from '../../assets/images/user-icon.png'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useSelector } from 'react-redux'
 const nav__link = [
   {
     path: 'home',
@@ -22,7 +23,7 @@ const nav__link = [
 
 const Header = () => {
   const headerRef = useRef(null);
-  const menuRef = useRef(null);
+  const totalQuantity = useSelector(state => state.cart.totalQuantity)
   const stickyHandlerFunc = () => {
     window.addEventListener('scroll', () => {
       if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
@@ -35,8 +36,7 @@ const Header = () => {
   useEffect(() => {
     stickyHandlerFunc()
     return () => window.removeEventListener('scroll', stickyHandlerFunc)
-  }, []);
-  const menuToggle = () => menuRef.current.classList.toggle('active__menu')
+  });
   return (
     <header className='header' ref={headerRef}>
       <Container>
@@ -49,7 +49,7 @@ const Header = () => {
                 {/* <p>Since 1990</p> */}
               </div>
             </div>
-            <div className='naviagtion' ref={menuRef} onClick={menuToggle}>
+            <div className='naviagtion' >
               <ul className='menu'>
                 {
                   nav__link.map((item, index) => (
@@ -67,11 +67,11 @@ const Header = () => {
               </span>
               <span className='cart__icon'>
                 <i class="ri-shopping-bag-line"></i>
-                <div className="badge">1</div>
+                <div className="badge">{totalQuantity}</div>
               </span>
               <span><motion.img whileTap={{ scale: 1.2 }} src={userIcon} alt="" /></span>
               <div className="mobile__menu">
-                <span onClick={menuToggle}><i class="ri-menu-line"></i></span>
+                <span><i class="ri-menu-line"></i></span>
               </div>
             </div>
           </div>
