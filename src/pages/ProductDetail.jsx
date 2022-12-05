@@ -29,6 +29,7 @@ const ProductDetail = () => {
             text: reviewsUserMsg,
             rating,
         }
+        console.log(reviewObj);
         toast.success('Review Submited !')
     }
     const addTocart = () => {
@@ -104,7 +105,7 @@ const ProductDetail = () => {
                                                 <form action="" onSubmit={onSubmitHanler}>
                                                     <h4>Leave your experience</h4>
                                                     <div className='form__group'>
-                                                        <input type="text" placeholder='Enter Name' ref={reviewUser}  required/>
+                                                        <input type="text" placeholder='Enter Name' ref={reviewUser} required />
                                                     </div>
                                                     <div className='form__group d-flex align-items-center gap-5'>
                                                         <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(1)}>1<i class="ri-star-fill"></i></motion.span>
